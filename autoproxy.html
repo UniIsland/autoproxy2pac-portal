@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>A Portal to AutoProxy2PAC</title>
+	<script type="text/javascript">
+		uriBase = location.protocol + "//" + location.host + location.pathname;
+		function updatePredefined(proxyURI)
+			{
+			document.getElementById('addr').value = uriBase.replace("autoproxy.html", "autoproxy.php") + proxyURI;
+			}
+		function updateCustom()
+		{
+//	problem remains with regex to match ipaddress and port.
+//			ipRegex = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/i;
+//			portRegex = /^\d{1,5}$/g;
+//			if !(ipRegex.test(document.getElementById('host').value)) alert("Not a valid ip address!");
+//			if !(portRegex.test(document.getElementById('port').value)) alert("Not a valid port number!");
+			uriSearch = "?type=" + document.getElementById('type').value + "&host=" + document.getElementById('host').value;
+			uriSearch = uriSearch + "&port=" + document.getElementById('port').value;
+			document.getElementById("addr").value = uriBase.replace("autoproxy.html", "autoproxy.php") + uriSearch;
+			}
+	</script>
+</head>
+<body style="padding-left:50px">
+	<h1>A Portal to AutoProxy2PAC</h1>
+	<div style="float:right;border-style:ridge;border-width:2px;">
+		If you don't know what autoproxy is.<br />
+		Follow links below for more info.<br />
+		<ul><li>
+			<a href="http://autoproxy.org/" target=_blank>AutoProxy</a><br />
+		</li><li>
+			<a href="http://autoproxy2pac.appspot.com/" target=_blank>AutoProxy2PAC</a><br />
+		</li></ul>
+		See source code of this project:
+		<ul><li>
+			<a href="http://github.com/UniIsland/autoproxy2pac-portal" target=_blank>autoproxy2pac-portal</a>
+		</li></ul>
+	</div>
+	<p>
+		This is still a prototype for autoproxy2pac-portal.<br />
+		Set up a simple portal page to autoproxy2pac on any public accessible site.<br />
+		In order to make autoproxy2pac unblockable by the GFW.
+	</p>
+	<hr style="max-width:50%;" />
+	<div>
+		<input type="radio" name="proxy" onclick="document.getElementById('custom').style.display='none';updatePredefined('?type=proxy&host=127.0.0.1&port=8000')" />GAppProxy. 
+		<input type="radio" name="proxy" onclick="document.getElementById('custom').style.display='none';updatePredefined('?type=socks&host=127.0.0.1&port=9050')" />Tor. 
+		<input type="radio" name="proxy" onclick="document.getElementById('custom').style.display='none';updatePredefined('?type=proxy&host=127.0.0.1&port=8580')" />FreeGate.<br />
+		<input type="radio" name="proxy" onclick="document.getElementById('custom').style.display='inline';updateCustom()" />Custom: 
+		<div id="custom" style="display:none;">
+			<select id="type" onchange="updateCustom()"><option value="proxy">HTTP</option><option value="socks">SOCKS</option></select>
+			<input id="host" type="text" onchange="updateCustom()" size="16" value="127.0.0.1" />:
+			<input id="port" type="text" onchange="updateCustom()" size="5" value="8080" />
+		</div>
+		<div id="proxy">
+			<br /><textarea id="addr" rows="1" cols="80" readonly="readonly"></textarea>
+		</div>
+		<input type="button" value="Download" onclick="location.assign(document.getElementById('addr').value)" /><br />
+		Or put the above address into your browser configuration to use this PAC file.
+	</div>
+</body>
+</html>
