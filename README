@@ -7,8 +7,14 @@ In order to make autoproxy2pac unblockable by the GFW.
 
 Files Included
 
-proxy.html		frontend for proxy users.
-proxy.php		backend for the pac file.
+autoproxy.html		frontend for proxy users.
+autoproxy.php		backend for the pac file.
+
+
+Install
+
+Copy both of the html and php file to a server that have access to autoproxy2pac.appspot.com.
+and set up a link wherever you like to the html file.
 
 
 Related Sites
