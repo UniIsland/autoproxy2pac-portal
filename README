@@ -13,7 +13,8 @@ autoproxy.php		backend for the pac file.
 
 Install
 
-Copy both of the html and php file to a server that have access to autoproxy2pac.appspot.com.
+I'll keep this project lightweight and easy to implement.
+Just opy both of the html and php file to a server that have access to autoproxy2pac.appspot.com.
 and set up a link wherever you like to the html file.
 
 
