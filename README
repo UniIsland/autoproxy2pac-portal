@@ -2,20 +2,18 @@ Description
 
 This is still a prototype for autoproxy2pac-portal.
 Set up a simple portal page to autoproxy2pac on any public accessible site.
-In order to make autoproxy2pac unblockable by the GFW.
-
-
-Files Included
-
-autoproxy.html		frontend for proxy users.
-autoproxy.php		backend for the pac file.
+Main purpose of this project is to make autoproxy2pac unblockable by the GFW.
+So I'll keep this project lightweight and easy to implement.
 
 
 Install
 
-I'll keep this project lightweight and easy to implement.
-Just opy both of the html and php file to a server that have access to autoproxy2pac.appspot.com.
-and set up a link wherever you like to the html file.
+Just copy the "autoproxy.php" file to a server that have access to autoproxy2pac.appspot.com.
+
+And everything is done. 
+Then tell others about your portal by setting up a link to it somewhere.
+You are free to rename the file (keep the .php extension though),
+and put it into any sub-directory of your site.
 
 
 Related Sites
@@ -29,18 +27,18 @@ http://xuejian.info/proxy.html
 
 License
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 Contact
